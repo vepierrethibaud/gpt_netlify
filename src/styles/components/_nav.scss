@@ -1,0 +1,306 @@
+@import "../helpers/_variables.scss";
+
+nav{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 1200;
+    transition: ease .3s;
+
+    .container{
+        width: 90%;
+        height: 100%;
+        border-bottom: solid 1px $white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .socials{
+            height: 70px;
+            width: 250px;
+            background-color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            color: $black;
+            
+            i{
+                font-size: 24px;
+            }
+
+            p{
+                margin-left: 10px;
+                font-size: 18px;
+            }
+
+            &.project_nav{
+
+                p{
+                    margin-left: 15px;
+                    font-weight: $light;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .links{
+            display: flex;
+
+            p{
+                margin-left: 40px;
+                color: $white;
+                cursor: pointer;
+                transition: ease .3s;
+
+                &:first-of-type{
+                    margin-left: 0;
+                }
+
+                &:hover{
+                    color: $grey;
+                }
+            }
+
+            &.project_nav{
+                align-items: center;
+
+                p{
+                    cursor: unset;
+
+                    &:hover{
+                        color: $white;
+                    }
+                }
+                
+
+                i{
+                    font-size: 30px;
+                    margin-left: 20px;
+                    color: $white;
+                    transition: ease .3s;
+
+                    &:hover{
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        svg{
+            height: 70px;
+            padding-left: 50px;
+            fill: $white;
+        }
+    }
+
+    &.scroll{
+        background-color: $white;
+
+        .container{
+            width: 90%;
+            height: 100%;
+            border-bottom: solid 1px $black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+            .socials{
+                height: 70px;
+                width: 250px;
+                background-color: $black;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: 50px;
+                color: $white;
+                
+                i{
+                    font-size: 24px;
+                }
+    
+                p{
+                    margin-left: 5px;
+                    font-size: 18px;
+                }
+
+                &.project_nav{
+
+                    p{
+                        margin-left: 15px;
+                        font-weight: $light;
+                        font-size: 16px;
+                    }
+                }
+            }
+    
+            .links{
+                display: flex;   
+    
+                p{
+                    color: $black;
+                    transition: ease .3s;
+
+                    &:hover{
+                        color: $grey;
+                    }
+                }
+
+                &.project_nav{
+                    align-items: center;
+
+                    p{
+                        cursor: unset;
+    
+                        &:hover{
+                            color: $black;
+                        }
+                    }
+
+                    i{
+                        font-size: 30px;
+                        margin-left: 20px;
+                        color: $black;
+                        transition: ease .3s;
+
+                        &:hover{
+                            color: $grey;
+                        }
+                    }
+                }
+            }
+    
+            svg{
+                height: 70px;
+                padding-left: 50px;
+                fill: $black;
+            }
+        }
+    }
+}
+
+@media (max-width: 1050px){ 
+
+    #home{
+        nav{
+            &.scroll{
+                .container{
+                    .socials{
+                        display: none;
+                    }
+                }
+            }
+    
+            .socials{
+                display: none;
+            }
+        }
+    }
+
+    nav{
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        top: 0;
+        z-index: 1200;
+        background-color: $white;
+
+        .container{
+
+            .links{
+                p{
+                    color: $black;
+                }
+            }
+
+            svg{
+                fill: $black;
+            }
+        }
+    }
+
+    #project{
+        nav{
+            &.scroll{
+                .container{
+                    .links{
+                        display: none;
+                    }
+                    
+                    .socials{
+                        height: unset;
+                        width: unset;
+                        background-color: unset;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                        justify-content: center;
+                        border-radius: unset;
+                        color: $black;
+        
+                        p{
+                            font-size: 20px;
+                        }
+                    }
+        
+                    svg{
+                        display: none;
+                    }
+                }
+            }
+    
+            .links{
+                display: none;
+            }
+            
+            .socials{
+                height: unset;
+                width: unset;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                border-radius: unset;
+                color: $black;
+
+                p{
+                    font-size: 20px;
+                }
+            }
+
+            svg{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px){ 
+    #home{
+        nav{
+            
+            &.scroll{
+                .container{
+                    justify-content: center;
+
+                    svg{
+                        display: none !important;
+                    }
+                }
+            }
+    
+            .container{
+                justify-content: center;
+
+                svg{
+                    display: none !important;
+                }
+            }
+        }
+    }
+}

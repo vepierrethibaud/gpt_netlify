@@ -1,0 +1,49 @@
+@import "../helpers/_variables.scss";
+
+html{
+  background-color: $white;
+
+  a{
+    text-decoration: none;
+  }
+
+  .none{
+    display: none;
+  }
+  
+  .uppercase{
+    text-transform: uppercase;
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
+
+  .flex_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .flex_col{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .display_resp, .recover{
+    display: none;
+  }
+
+  .error_auth{
+    color: $red;
+    margin-bottom: 30px;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+  
+    i{
+      margin-right: 10px;
+      font-size: 18px;
+    }
+  }
+}

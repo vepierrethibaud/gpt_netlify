@@ -1,0 +1,272 @@
+@import "../helpers/_variables.scss";
+
+#project{
+    .line{
+        width: 100%;
+        height: 1px;
+        background-color: $grey;
+        margin-top: $global_margin;
+    }
+
+    .header{
+        margin: 0 auto;
+        height: 600px;
+        background-color: $blue;
+        border-radius: 0 0 25px 25px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+
+            &:first-of-type{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &:last-of-type{
+                position: absolute;
+                z-index: 999;
+                height: 250px;
+                margin-top: 120px;
+            }
+        }
+    }
+
+    .project{
+        margin-top: $global_margin;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+
+        h1{
+            font-size: 40px;
+        }
+
+        .desc{
+            font-size: 19px;
+            margin-top: 40px;
+            font-weight: $light;
+            text-align: center;
+            width: 80%;
+        }
+
+        .video_container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: $global_margin;
+
+            .play_button{
+                width: 100px;
+                height: 100px;
+                background-color: $blue;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                font-size: 38px;
+                position: absolute;
+            }
+
+            img{        
+                display: block;
+                width: 100%;
+                height: 600px;
+                object-fit: cover;
+                border-radius: 25px;
+            }
+        }
+        
+
+        .main_project{
+            display: flex;
+            width: 100%;
+            margin-top: $global_margin;
+            
+            div{
+                width: 30%;
+
+                h3{
+                    font-size: 38px;
+                    font-weight: $regular;
+                }
+            }
+
+            p{
+                width: 70%;
+                font-size: 19px;
+                font-weight: $light;
+            }
+        }
+    }
+
+    .skills{
+        display: flex;
+        width: 100%;
+        margin-top: $global_margin;
+
+        div{
+            width: 30%;
+
+            h3{
+                font-size: 38px;
+                font-weight: $regular;
+            }
+
+            &:last-of-type{
+                width: 70%;
+                font-size: 22px;
+                font-weight: $light;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                
+                p{
+                    padding: 20px 40px;
+                }
+            }
+        }
+    }
+
+    .pictures{
+        width: 100%;
+        margin-top: $global_margin;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        img{
+            width: 49%;
+            height: 400px;
+            object-fit: cover;
+            margin-top: 30px;
+
+            &:nth-of-type(1), &:nth-of-type(2){
+                margin-top: 0;
+            }
+
+            &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12){
+                width: 100%;
+                height: 600px;
+            }
+        }
+    }
+}
+
+@media (min-width: 650px) and (max-width: 1050px){ 
+
+    #project{    
+        .project{
+            .main_project{
+                flex-direction: column;
+                
+                div{
+                    width: 100%;
+                }
+    
+                p{
+                    width: 100%;
+                    margin-top: 30px;
+                }
+            }
+        }
+    
+        .skills{
+            flex-direction: column;
+        
+            div{
+                width: 100%;
+        
+                &:last-of-type{
+                    margin-top: 20px;
+                    width: 100%;
+                }
+            }
+        }
+    
+        .pictures{
+            img{
+                height: 300px;
+    
+                &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12){
+                    height: 500px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 649px){
+    #project{    
+        .project{
+            align-items: flex-start;
+    
+            .desc{
+                text-align: left;
+                width: 100%;
+            }
+    
+            .video_container{    
+                img{        
+                    height: 400px;
+                }
+            }
+    
+            .main_project{
+                flex-direction: column;
+                
+                div{
+                    width: 100%;
+                }
+    
+                p{
+                    width: 100%;
+                    margin-top: 30px;
+                }
+            }
+        }
+    
+        .skills{
+            flex-direction: column;
+        
+            div{
+                width: 100%;
+        
+                &:last-of-type{
+                    margin-top: 20px;
+                    width: 100%;
+                    font-size: 22px;
+
+                    p{
+                        padding: 20px 20px;
+                    }
+                }
+            }
+        }
+    
+        .pictures{
+    
+            img{
+                width: 100%;
+                height: 300px;
+    
+                &:nth-of-type(2){
+                    margin-top: 30px;
+                }
+    
+                &:nth-of-type(3), &:nth-of-type(6), &:nth-of-type(9), &:nth-of-type(12){
+                    height: 300px;
+                }
+            }
+        }
+    }
+}

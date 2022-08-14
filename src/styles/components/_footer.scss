@@ -1,0 +1,138 @@
+@import "../helpers/_variables.scss";
+
+footer{
+    width: 100%;
+    height: 340px;
+    background-color: $black;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    margin-top: $global_margin;
+
+    .container{
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        padding: 50px 0;
+        box-sizing: border-box;
+        justify-content: space-between;
+
+        div{
+            display: flex;
+            align-items: flex-end;
+            height: 70px;
+
+            &:first-of-type{
+                img{
+                    height: 70px;
+                }
+
+                p{
+                    margin-left: 75px;
+                }
+            }
+
+            &:last-of-type{
+                i{
+                    font-size: 24px;
+                    margin-left: 25px;
+                }
+            }
+                        
+            a{
+                color: $white;
+                transition: ease .3s;
+
+                &:hover{
+                    color: $grey;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1050px){ 
+    footer{
+        // width: 100%;
+        // height: 340px;
+        // background-color: $black;
+        // color: $white;
+        // display: flex;
+        // justify-content: center;
+        // margin-top: $global_margin;
+    
+        .container{
+            // height: 100%;
+            // display: flex;
+            // align-items: flex-end;
+            padding: 50px 0;
+            flex-direction: column;
+            // box-sizing: border-box;
+            justify-content: center;
+    
+            div{
+                display: flex;
+                align-items: center;
+                height: unset;
+    
+                &:first-of-type{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img{
+                        height: 100px;
+                    }
+    
+                    p{
+                        display: none;
+                    }
+                }
+    
+                &:last-of-type{
+                    // display: none;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 50px;
+
+                    p{
+                        display: none;
+                    }
+
+                    a{
+                        margin-left: 25px;
+
+                        &:first-of-type{
+                            margin-left: 0;
+                        }
+                    }
+
+                    i{
+                        font-size: 24px;
+                        margin-left: 0;
+                        height: 55px;
+                        width: 55px;
+                        background-color: $white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50px;
+                        color: $black;
+                    }
+                }
+                            
+                a{
+                    // color: $white;
+                    // transition: ease .3s;
+    
+                    &:hover{
+                        // color: $grey;
+                    }
+                }
+            }
+        }
+    }
+}

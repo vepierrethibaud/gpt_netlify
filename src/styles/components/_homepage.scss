@@ -1,0 +1,367 @@
+@import "../helpers/_variables.scss";
+
+#home{
+    .line{
+        width: 100%;
+        height: 1px;
+        background-color: $grey;
+        margin-top: $global_margin;
+    }
+    
+    .header{
+        margin: 0 auto;
+        height: 95vh;
+        background-color: $darkgrey;
+        border-radius: 0 0 25px 25px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        svg{
+            position: absolute;
+            fill: $white;
+            width: 40%;
+            margin-left: 10%
+        }
+    }
+    
+    .project{
+        margin-top: $global_margin;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        a{
+            width: 100%;
+    
+            img{
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+                border-radius: 0 0 25px 25px;
+            }
+        }
+    
+        .main_project{
+            display: flex;
+            width: 100%;
+            margin-top: $global_margin;
+            
+            a{
+                width: 30%;
+                color: $black;
+    
+                h3{
+                    font-size: 38px;
+                    transition: ease .3s;
+                }
+            }
+    
+            p{
+                width: 70%;
+                font-size: 22px;
+                font-weight: $light;
+            }
+
+            &:hover{
+                h3{
+                    color: $blue;
+                }
+            }
+        }
+    }
+    
+    .other_projects{
+        margin-top: $global_margin;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    
+        div{
+            width: 48%;
+            height: 400px;
+            background-color: $grey;
+            border-radius: 0 0 25px 25px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 50px;
+    
+            &:nth-child(1), &:nth-child(2){
+                margin-top: 0;
+            }
+    
+            h3{
+                position: absolute;
+                bottom: 40px;
+                right: 40px;
+                font-size: 30px;
+                color: $white;
+                text-shadow: $black 1px 0 10px;     
+            }
+    
+            img{
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    .skills{
+        display: flex;
+        width: 100%;
+        margin-top: $global_margin;
+    
+        div{
+            width: 30%;
+    
+            h3{
+                font-size: 38px;
+                font-weight: $regular;
+            }
+    
+            &:last-of-type{
+                width: 70%;
+                font-size: 22px;
+                font-weight: $light;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                
+                p{
+                    padding: 20px 40px;
+                }
+            }
+        }
+    }
+    
+    .team{
+        display: flex;
+        width: 100%;
+        margin-top: $global_margin;
+        justify-content: space-between;
+    
+        img{
+            width: 65%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 0 0 25px 25px;
+        }
+    
+        p{
+            width: 30%;
+            font-size: 20px;
+            font-weight: $light;
+        }
+    }
+    
+    .partners{
+        width: 100%;
+        margin-top: $global_margin;
+        
+        h3{
+            font-size: 38px;
+            font-weight: $regular;
+            margin-bottom: calc($global_margin - 50px);
+        }
+    
+        div{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+    
+            img{
+                max-width: 180px;
+                max-height: 80px;
+                padding: 40px;
+            }
+        }
+    }
+    
+    .contact{
+        width: 100%;
+        margin-top: $global_margin;
+    
+        p{
+            width: 60%;
+            font-size: 20px;
+            font-weight: $light;
+        }
+    
+        h4{
+            font-size: 50px;
+            font-weight: $bold;
+            margin-top: 120px;
+        }
+    }
+}
+
+@media (min-width: 650px) and (max-width: 1050px){ 
+    #home{
+        overflow: hidden;
+        
+        .header{ 
+            svg{
+                width: 60%;
+            }
+        }
+        
+        .project{        
+            .main_project{
+                flex-direction: column;
+                margin-top: 40px !important;
+                
+                a{
+                    width: 100%;
+                }
+        
+                p{
+                    width: 100% !important;
+                    margin-top: 20px;
+                }
+            }
+        }
+        
+        .skills{
+            flex-direction: column;
+        
+            div{
+                width: 100%;
+        
+                &:last-of-type{
+                    margin-top: 20px;
+                    width: 100%;
+                }
+            }
+        }
+        
+        .team{
+            flex-direction: column;
+        
+            img{
+                width: 100%;
+            }
+        
+            p{
+                width: 100%;
+                margin-top: 40px;
+            }
+        }
+        
+        .partners{        
+            div{
+                justify-content: flex-start;        
+            }
+        }
+        
+        .contact{
+            p{
+                width: 80%;
+            }
+        
+            h4{
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 649px){
+    #home{
+        overflow: hidden;
+        
+        .header{    
+            svg{
+                width: 60%;
+            }
+        }
+        
+        .project{        
+            .main_project{
+                flex-direction: column;
+                margin-top: 40px !important;
+                
+                a{
+                    width: 100%;
+                }
+        
+                p{
+                    width: 100% !important;
+                    margin-top: 20px;
+                }
+            }
+        }
+        
+        .other_projects{
+            div{
+                width: 100%; 
+            }
+        }
+        
+        .skills{
+            flex-direction: column;
+
+            div{
+                width: 100%;
+        
+                &:last-of-type{
+                    margin-top: 20px;
+                    width: 100%;
+                    font-size: 22px;
+                    
+                    p{
+                        padding: 20px 20px;
+                    }
+                }
+            }
+        }
+        
+        .team{
+            flex-direction: column;
+        
+            img{
+                width: 100%;
+            }
+        
+            p{
+                width: 100%;
+                margin-top: 40px;
+            }
+        }
+        
+        .partners{            
+            div{
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+        
+                img{
+                    padding: 40px 0;
+                }
+            }
+        }
+        
+        .contact{        
+            p{
+                width: 80%;
+            }
+        
+            h4{
+                font-size: 2rem;
+                max-width: 100%;
+            }
+        }
+    }
+}

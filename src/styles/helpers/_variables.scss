@@ -1,0 +1,35 @@
+// COLOR
+
+$white: #ffffff;
+$black: #111111;
+
+$grey: #A6AABE;
+$lightgrey: #EAECF3;
+$darkgrey: #373737;
+// $boxgrey: #F5F5F5F8;
+
+$blue: #0983EA;
+$red: #DF0029;
+// $lightblue: #3154E2;
+// $darkblue: #001248;
+
+// $purple: #704CED;
+
+// $yellow: #ffce37;
+
+// TEXT
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+
+// MARGIN
+
+$global_margin: 100px;
+
+@media (max-width: 649px){
+    $global_margin: 80px;
+}
