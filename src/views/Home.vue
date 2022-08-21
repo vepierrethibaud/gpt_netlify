@@ -9,7 +9,7 @@
           </a>
 
           <div class="links">
-            <p @click="scroll('project')">Projet</p>
+            <p @click="scroll('project')">Projets</p>
             <p @click="scroll('skills')">Expertise</p>
             <p @click="scroll('team')">L'équipe</p>
             <p @click="scroll('contact')">Contact</p>
@@ -113,8 +113,8 @@
     
     <section class="header container">
       <img :src="getImgUrl(this.gpt.img)" alt="Great Production Team">
-      <!-- <h1></h1> -->
-      <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <h1>Des créations originales, sur toutes les plateformes.</h1>
+      <!-- <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 100 33.61" style="enable-background:new 0 0 100 33.61;" xml:space="preserve">
         <g>
           <path d="M96.79,19.34v5.52h-1.93v-0.34c0-1.34,0-2.69,0-4.03c0-0.11,0-0.23-0.01-0.34c-0.08-0.78-0.3-1.01-1-1.09
@@ -205,7 +205,7 @@
           <path d="M15.41,17.88c-0.14,0.32-0.23,0.57-0.37,0.79c-0.06,0.1-0.21,0.21-0.32,0.21c-0.09,0-0.26-0.14-0.27-0.23
             c-0.01-0.13,0.07-0.31,0.17-0.38C14.83,18.13,15.08,18.04,15.41,17.88z"/>
         </g>
-      </svg>
+      </svg> -->
     </section>
 
     <div class="container content" id="project">
@@ -343,37 +343,42 @@ export default {
     async content(){
 
       this.gpt = {
-        title: "",
+        title: "Greatprod.fr background",
         img: "back.jpg",
       }
 
       this.main_project = {
         name: "Zen Emission",
         url: "zenemission",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        picture: "zen/FZ1A1180.jpg",
+        description: "Zen est une émission en rupture avec les talkshows traditionnels de Twitch. Porté par le duo Maxime Biaggi & Grimkujow, ce show bimensuel au ton décalé et humoristique plonge ses invités dans des happenings complètement fous.",
+        picture: "zen/FZ1A0931.jpg",
       }
       
       this.projects = {
-        [1]: {
+        [0]: {
           name: "Mag Esport",
           url: "magesport",
           picture: "mag_esport/le-mag-e-sport.jpeg",
         },
+        [1]: {
+          name: "The Sandbox Livestream",
+          url: "thesandboxlivestream",
+          picture: "sandboxlivestream/Screenshot_5.png",
+        },
       }
 
       this.skills = {
-        [0]: "Lorem Ipsum",
-        [1]: "Lorem Ipsum",
-        [2]: "Lorem Ipsum",
-        [3]: "Lorem Ipsum",
-        [4]: "Lorem Ipsum",
-        [5]: "Lorem Ipsum",
+        [0]: "Création de formats originaux internet et télévision",
+        [1]: "Conseil éditorial",
+        [2]: "Production Live",
+        [3]: "Réalisation de reportages",
+        [4]: "Couverture d’évènements esport et gaming",
+        [5]: "Accompagnement de vos initiatives Twitch, YouTube et réseaux sociaux",
       }
 
       this.team = {
-        picture: "zen/FZ1A0931.jpg",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        picture: "team.jpg",
+        description: "La Great Prod vous accompagne dans vos projets de création de contenu digital et télévisuel. Passés par MTV, Game One, BeIN Sports, PlayStation North America et le groupe Webedia les membres de notre équipe allient une solide expérience de production dans les grands groupes télé à une réelle expertise dans la création de contenu sur internet. Émissions et reportages à destination de Twitch, YouTube ou de la télévision, formats courts pensés pour Tik Tok et les autres réseaux, nous répondons à vos besoins avec des créations originales adaptées à toutes les plateformes.",
       }
 
       this.partners = {
@@ -394,10 +399,6 @@ export default {
           picture: "partners/happn.png",
         },
         // [4]: {
-        //   name: "Webedia",
-        //   picture: "partners/webedia.png",
-        // },
-        // [5]: {
         //   name: "Webedia",
         //   picture: "partners/webedia.png",
         // },

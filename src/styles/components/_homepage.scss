@@ -24,11 +24,16 @@
             object-fit: cover;
         }
 
-        svg{
+        svg, h1{
             position: absolute;
             fill: $white;
             width: 40%;
-            margin-left: 10%
+            margin-left: 10%;
+        }
+
+        h1{
+            color :$white;
+            font-size: 55px;
         }
     }
     
@@ -213,9 +218,11 @@
         overflow: hidden;
         
         .header{ 
-            svg{
+            svg, h1{
                 width: 60%;
             }
+
+            
         }
         
         .project{        
@@ -283,8 +290,12 @@
         overflow: hidden;
         
         .header{    
-            svg{
+            svg, h1{
                 width: 60%;
+            }
+
+            h1{
+                font-size: 45px;
             }
         }
         
@@ -307,6 +318,16 @@
         .other_projects{
             div{
                 width: 100%; 
+                margin-top: 40px !important;
+
+                &:first-of-type{
+                    margin-top: 0;
+                }
+
+                h3{
+                    right: unset;
+                    left: 40px;
+                }
             }
         }
         

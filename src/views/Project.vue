@@ -8,7 +8,7 @@
         </router-link>
 
         <div class="links project_nav">
-          <p>{{this.project.name}}:</p>
+          <p>{{this.project.name}}</p>
 
           <a v-for="(social, index) in socials" :key="index" :href="this.socials[index].url" target="_blank">
             <i v-if="this.socials[index].name === 'twitch'" class="fa-brands fa-twitch"></i>
@@ -144,9 +144,9 @@
       </section>
     </div>
 
-    <div class="line"></div>
+    <div v-if="this.expertise !== null" class="line"></div>
     
-    <div class="container content">
+    <div class="container content" v-if="this.expertise !== null">
       <section class="skills container">
         <div>
             <h3>Expertise</h3>
@@ -162,7 +162,7 @@
 
     <section class="container content">
       <div class="pictures">
-        <img v-for="(expertise, index) in expertise" :key="index" :src="getImgUrl(this.pictures[index])" :alt="this.project.name">
+        <img v-for="(picture, index) in pictures" :key="index" :src="getImgUrl(this.pictures[index])" :alt="this.project.name">
       </div>
     </section>
 
@@ -199,12 +199,17 @@ export default {
     if(url === "zenemission"){
 
       this.zenEmission();
-      document.title = "Zen Emission | GreatProd.fr"
+      document.title = "Zen | GreatProd.fr"
 
     } else if(url === "magesport"){
 
       this.magEsport();
       document.title = "Mag Esport | GreatProd.fr"
+
+    } else if(url === "thesandboxlivestream"){
+
+      this.sandboxLivestream();
+      document.title = "The SandBox Livestream | GreatProd.fr"
 
     }
   },  
@@ -223,96 +228,142 @@ export default {
     async zenEmission(){
 
       this.project = {
-        name: "Zen Emission",
+        name: "Zen",
         header: "zen/zen_background_2.jpg",
         logo: "zen/zen_logo.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Zen est une émission en rupture avec les talkshows traditionnels de Twitch. Porté par le duo Maxime Biaggi & Grimkujow, ce show bimensuel au ton décalé et humoristique plonge ses invités dans des happenings complètement fous. Chorégraphie de KPOP, scène de catch avec des professionnels, stream en limousine, séquence dans l’espace, reconstitution d’une garde à vue, Zen repousse les limites du divertissement sur Twitch. En 8 mois d’existence sur la chaîne d’un talent naissant, Zen réunit 4000 spectateurs en moyenne par émission et cumule près d’un demi-million de vues sur Twitch.",
         embed_video: {
-          url: "",
+          url: "https://www.youtube.com/watch?v=lfNR0IAExaA&ab_channel=GreatProductionTeam",
           picture: "zen/FZ1A1180.jpg",
         },
-        approach: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",    
+        approach: "Avec Zen, nous voulions créer un show complètement inédit sur Twitch. Si la plateforme regorge déjà d’émissions, de talkshows et de podcasts de qualité, nous voulions apporter un grain de folie, d’imprévisible et de burlesque, un terrain sur lequel peu ont osé s’aventurer en direct. Un pari réussi avec une première saison à 13 épisodes qui a trouvé son public et accueilli des invités du calibre de Billy, Mehdi Maïzi, Joyca, Freddy Gladieux, Cortex et bien d’autres.",    
       }
 
       this.socials = {
         [0]: {
           name: "twitch",
-          url: "",
+          url: "https://www.twitch.tv/maximebiaggi",
         },
         [1]: {
           name: "youtube",
-          url: "",
+          url: "https://www.youtube.com/c/Zen%C3%A9mission/featured",
         },
         [2]: {
           name: "twitter",
-          url: "",
+          url: "https://twitter.com/ZenEmission",
+        },
+        [3]: {
+          name: "tiktok",
+          url: "#",
         },
       }
 
-      this.expertise = {
-        [0]: "Lorem Ipsum",
-        [1]: "Lorem Ipsum",
-        [2]: "Lorem Ipsum",
-        [3]: "Lorem Ipsum",
-        [4]: "Lorem Ipsum",
-        [5]: "Lorem Ipsum",
-      }
+      this.expertise = null
 
       this.pictures = {
-        [0]: "zen/FZ1A1180.jpg",
-        [1]: "zen/FZ1A1180.jpg",
-        [2]: "zen/FZ1A1180.jpg",
-        [3]: "zen/FZ1A1180.jpg",
-        [4]: "zen/FZ1A1180.jpg",
-        [5]: "zen/FZ1A1180.jpg",
+        [0]: "zen/FZ1A0299.jpg",
+        [1]: "zen/FZ1A8851.jpg",
+        [2]: "zen/FZ1A7563.jpg",
+        [3]: "zen/FZ1A7548.jpg",
+        [4]: "zen/FZ1A6708.jpg",
+        [5]: "zen/FZ1A6009.jpg",
+        [6]: "zen/FZ1A3196.jpg",
+        [7]: "zen/FZ1A2197.jpg",
+        [8]: "zen/FZ1A1810.jpg",
+        [9]: "zen/FZ1A9307.jpg",
+        [10]: "zen/12.jpg",
+        [11]: "zen/02.jpg",
       }
     },
 
     async magEsport(){
 
       this.project = {
-        name: "Zen Emission",
-        header: "zen/zen_background_2.jpg",
-        logo: "zen/zen_logo.png",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        name: "Le MAG Esport",
+        header: "mag_esport/MagEsport.png",
+        logo: "mag_esport/LOGO_MAGESPORT_00000.png",
+        description: "Le rendez-vous 100% esport du vendredi soir en access prime-time sur MGG TV, la première chaîne télévisée entièrement consacrée à l’esport avec 1,1 million de téléspectateurs mensuels. Présenté par Thibault Braccio, Stéphane Cochara et JoelPostbad avec les chroniqueurs MGG, le MAG Esport revient sur toute l’actualité et les résultats de la semaine sur League of Legends, Counter-Strike, Valorant, Fortnite et les autres jeux de référence avec des débats enflammés ainsi que des interviews avec les meilleurs joueurs mondiaux. Disponible sur Canal+, Amazon Prime, Orange, Bouygues, Free, SFR et Molotov.",
         embed_video: {
-          url: "",
-          picture: "zen/FZ1A1180.jpg",
+          url: "https://www.youtube.com/watch?v=Q7NTmvppPBU&ab_channel=GreatProductionTeam",
+          picture: "mag_esport/P1044860.jpg",
         },
-        approach: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",    
+        approach: "En plus d’être un rendez-vous apprécié par les fans d’esport, le MAG Esport, avec ses discussions très mouvementées et son large spectre éditorial, est aussi un divertissement pouvant toucher une large audience qui ne connait pas nécessairement la discipline. Ce magazine hebdomadaire de 52 minutes reprend les codes des émissions de sport de référence à la télévision et la radio en les adaptant à la culture internet.",    
       }
 
       this.socials = {
-        [0]: {
-          name: "twitch",
-          url: "",
-        },
-        [1]: {
-          name: "youtube",
-          url: "",
-        },
-        [2]: {
-          name: "twitter",
-          url: "",
-        },
+        // [0]: {
+        //   name: "twitch",
+        //   url: "",
+        // },
+        // [1]: {
+        //   name: "youtube",
+        //   url: "",
+        // },
+        // [2]: {
+        //   name: "twitter",
+        //   url: "",
+        // },
       }
 
       this.expertise = {
-        [0]: "Lorem Ipsum",
-        [1]: "Lorem Ipsum",
-        [2]: "Lorem Ipsum",
-        [3]: "Lorem Ipsum",
-        [4]: "Lorem Ipsum",
-        [5]: "Lorem Ipsum",
+        [0]: "Présentation et chroniques",
+        [1]: "Booking des chroniqueurs et invités",
+        [2]: "Création du conducteur",
+        [3]: "Production des assets vidéo",
+        [4]: "Brief des équipes de tournage",
+        [5]: "Supervision de la post–production",
+        [6]: "Relais sociaux",
       }
 
       this.pictures = {
-        [0]: "zen/FZ1A1180.jpg",
-        [1]: "zen/FZ1A1180.jpg",
-        [2]: "zen/FZ1A1180.jpg",
-        [3]: "zen/FZ1A1180.jpg",
-        [4]: "zen/FZ1A1180.jpg",
-        [5]: "zen/FZ1A1180.jpg",
+        [0]: "mag_esport/P1044800.jpg",
+        [1]: "mag_esport/P1044899.jpg",
+        [2]: "mag_esport/IMG_3738.jpg",
+      }
+    },
+
+    async sandboxLivestream(){
+
+      this.project = {
+        name: "The Sandbox Livestream",
+        header: "sandboxlivestream/bg_sandbox.jpg",
+        logo: "sandboxlivestream/sandbox-logo-colour.png",
+        description: "Réalisation du pilote The Sandbox Livestream commandé par Webedia. Une émission autour de l’actualité du jeu, du metaverse et des NFT présentée en anglais par Laure Valée et Brandon Smith. Diffusion en direct sur les chaînes Twitch, YouTube et le compte Facebook de The Sandbox.",
+        embed_video: {
+          url: "https://www.youtube.com/watch?v=8canppirUiY",
+          picture: "sandboxlivestream/SANDBOX_SCREEN_2.png",
+        },
+        approach: "The Sandbox souhaitait faire découvrir le Web 3 et le métaverse à une nouvelle audience tout en proposant un show rafraichissant à sa communauté internationale. Remy Bompar, Operations Manager chez The Sandbox et Pandapops étaient en studio pour parler des dernières news du métaverse, de l’évènement NFT NYC qui s’était tenu quelques jours auparavant à Manhattan et de la saison 3 du jeu.",    
+      }
+
+      this.socials = {
+        // [0]: {
+        //   name: "twitch",
+        //   url: "",
+        // },
+        // [1]: {
+        //   name: "youtube",
+        //   url: "",
+        // },
+        // [2]: {
+        //   name: "twitter",
+        //   url: "",
+        // },
+      }
+
+      this.expertise = {
+        [0]: "Écriture de l’émission",
+        [1]: "Création du conducteur en collaboration avec les équipes de The Sandbox",
+        [2]: "Écriture et réalisation du reportage “Deep Dive Into Steve Aoki’s Experience",
+        [3]: "Direction Artistique",
+        [4]: "Live Production",
+        [5]: "Brief des équipes de tournage",
+      }
+
+      this.pictures = {
+        [0]: "sandboxlivestream/FXtdQysUUAMus8B.jpg",
+        [1]: "sandboxlivestream/SANDBOX_SCREEN_2.png",
+        [2]: "sandboxlivestream/Screenshot_5.png",
       }
     },
 

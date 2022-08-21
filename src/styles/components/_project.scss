@@ -64,6 +64,18 @@
             justify-content: center;
             margin-top: $global_margin;
 
+            &:hover{
+                .play_button{
+                    background-color: $white;
+                    width: 90px;
+                    height: 90px;
+
+                    i{
+                        color: $blue;
+                    }
+                }
+            }
+
             .play_button{
                 width: 100px;
                 height: 100px;
@@ -75,6 +87,7 @@
                 color: $white;
                 font-size: 38px;
                 position: absolute;
+                transition: ease .3s;
             }
 
             img{        
@@ -164,7 +177,17 @@
 
 @media (min-width: 650px) and (max-width: 1050px){ 
 
-    #project{    
+    #project{  
+        .header{
+            img{
+                &:last-of-type{
+                    max-height: 250px;
+                    height: unset;
+                    max-width: 80%;
+                }
+            }
+        }
+          
         .project{
             .main_project{
                 flex-direction: column;
@@ -207,8 +230,20 @@
 
 @media (max-width: 649px){
     #project{    
+        .header{
+            img{
+                &:last-of-type{
+                    max-height: 250px;
+                    height: unset;
+                    max-width: 80%;
+                }
+            }
+        }
+
         .project{
             align-items: flex-start;
+
+            
     
             .desc{
                 text-align: left;

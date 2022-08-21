@@ -288,8 +288,12 @@ nav{
                 .container{
                     justify-content: center;
 
+                    .links{
+                        display: none;
+                    }
+
                     svg{
-                        display: none !important;
+                        padding-left: 0;
                     }
                 }
             }
@@ -297,8 +301,12 @@ nav{
             .container{
                 justify-content: center;
 
+                .links{
+                    display: none;
+                }
+
                 svg{
-                    display: none !important;
+                    padding-left: 0;
                 }
             }
         }
