@@ -212,6 +212,7 @@
       <section class="project container">
         <router-link :to="'/projet/'+this.main_project.url" class="socials project_nav">
           <img :src="getImgUrl(this.main_project.picture)" :alt="this.main_project.name">
+          <img :src="getImgUrl(this.main_project.logo)" :alt="this.main_project.name">
         </router-link>
 
         <div class="main_project">
@@ -350,8 +351,9 @@ export default {
       this.main_project = {
         name: "Zen Emission",
         url: "zenemission",
+        logo: "zen/zen_logo.png",
         description: "Zen est une émission en rupture avec les talkshows traditionnels de Twitch. Porté par le duo Maxime Biaggi & Grimkujow, ce show bimensuel au ton décalé et humoristique plonge ses invités dans des happenings complètement fous.",
-        picture: "zen/FZ1A0931.jpg",
+        picture: "zen/zen_background_2.jpg",
       }
       
       this.projects = {
