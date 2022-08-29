@@ -126,13 +126,14 @@
         <h1>{{this.project.name}}</h1>
         <p class="desc">{{this.project.description}}</p>
 
-        <a :href="this.project.embed_video.url" target="_blank" class="video_container">
-          <div class="play_button">
-            <i class="fa-solid fa-play"></i>
-          </div>
-
-          <img :src="getImgUrl(this.project.embed_video.picture)" :alt="this.project.name">
-        </a>
+        <iframe
+            width="560" height="315"
+            frameborder="0" 
+            :src="this.project.embed_video.url" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+        ></iframe>
 
         <div class="main_project">
           <div>
@@ -233,8 +234,7 @@ export default {
         logo: "zen/zen_logo.png",
         description: "Zen est une émission en rupture avec les talkshows traditionnels de Twitch. Porté par le duo Maxime Biaggi & Grimkujow, ce show bimensuel au ton décalé et humoristique plonge ses invités dans des happenings complètement fous. Chorégraphie de KPOP, scène de catch avec des professionnels, stream en limousine, séquence dans l’espace, reconstitution d’une garde à vue, Zen repousse les limites du divertissement sur Twitch. En 8 mois d’existence sur la chaîne d’un talent naissant, Zen réunit 4000 spectateurs en moyenne par émission et cumule près d’un demi-million de vues sur Twitch.",
         embed_video: {
-          url: "https://www.youtube.com/watch?v=lfNR0IAExaA&ab_channel=GreatProductionTeam",
-          picture: "zen/FZ1A1180.jpg",
+          url: "https://www.youtube.com/embed/lfNR0IAExaA",
         },
         approach: "Avec Zen, nous voulions créer un show complètement inédit sur Twitch. Si la plateforme regorge déjà d’émissions, de talkshows et de podcasts de qualité, nous voulions apporter un grain de folie, d’imprévisible et de burlesque, un terrain sur lequel peu ont osé s’aventurer en direct. Un pari réussi avec une première saison à 13 épisodes qui a trouvé son public et accueilli des invités du calibre de Billy, Mehdi Maïzi, Joyca, Freddy Gladieux, Cortex et bien d’autres.",    
       }
@@ -282,10 +282,9 @@ export default {
         name: "Le MAG Esport",
         header: "mag_esport/MagEsport.png",
         logo: "mag_esport/LOGO_MAGESPORT_00000.png",
-        description: "Le rendez-vous 100% esport du vendredi soir en access prime-time sur MGG TV, la première chaîne télévisée entièrement consacrée à l’esport avec 1,1 million de téléspectateurs mensuels. Présenté par Thibault Braccio, Stéphane Cochara et JoelPostbad avec les chroniqueurs MGG, le MAG Esport revient sur toute l’actualité et les résultats de la semaine sur League of Legends, Counter-Strike, Valorant, Fortnite et les autres jeux de référence avec des débats enflammés ainsi que des interviews avec les meilleurs joueurs mondiaux. Disponible sur Canal+, Amazon Prime, Orange, Bouygues, Free, SFR et Molotov.",
+        description: "Le rendez-vous 100% esport du vendredi soir en access prime-time sur MGG TV, la première chaîne télévisée entièrement consacrée à l’esport avec 1,1 million de téléspectateurs mensuels. Présenté par Thibault Braccio, Stéphane Cochara et JoelPostbad avec les chroniqueurs MGG, le MAG Esport revient sur toute l’actualité et les résultats de la semaine sur League of Legends, Counter-Strike, Valorant, Fortnite et les autres jeux de référence avec des interviews des meilleurs joueurs mondiaux. Disponible sur Canal+, Amazon Prime, Orange, Bouygues, Free, SFR et Molotov.",
         embed_video: {
-          url: "https://www.youtube.com/watch?v=Q7NTmvppPBU&ab_channel=GreatProductionTeam",
-          picture: "mag_esport/P1044860.jpg",
+          url: "https://www.youtube.com/embed/Q7NTmvppPBU",
         },
         approach: "En plus d’être un rendez-vous apprécié par les fans d’esport, le MAG Esport, avec ses discussions très mouvementées et son large spectre éditorial, est aussi un divertissement pouvant toucher une large audience qui ne connait pas nécessairement la discipline. Ce magazine hebdomadaire de 52 minutes reprend les codes des émissions de sport de référence à la télévision et la radio en les adaptant à la culture internet.",    
       }
@@ -330,8 +329,7 @@ export default {
         logo: "sandboxlivestream/sandbox-logo-colour.png",
         description: "Réalisation du pilote The Sandbox Livestream commandé par Webedia. Une émission autour de l’actualité du jeu, du metaverse et des NFT présentée en anglais par Laure Valée et Brandon Smith. Diffusion en direct sur les chaînes Twitch, YouTube et le compte Facebook de The Sandbox.",
         embed_video: {
-          url: "https://www.youtube.com/watch?v=8canppirUiY",
-          picture: "sandboxlivestream/SANDBOX_SCREEN_2.png",
+          url: "https://www.youtube.com/embed/8canppirUiY",
         },
         approach: "The Sandbox souhaitait faire découvrir le Web 3 et le métaverse à une nouvelle audience tout en proposant un show rafraichissant à sa communauté internationale. Remy Bompar, Operations Manager chez The Sandbox et Pandapops étaient en studio pour parler des dernières news du métaverse, de l’évènement NFT NYC qui s’était tenu quelques jours auparavant à Manhattan et de la saison 3 du jeu.",    
       }
@@ -354,7 +352,7 @@ export default {
       this.expertise = {
         [0]: "Écriture de l’émission",
         [1]: "Création du conducteur en collaboration avec les équipes de The Sandbox",
-        [2]: "Écriture et réalisation du reportage “Deep Dive Into Steve Aoki’s Experience",
+        [2]: 'Écriture et réalisation du reportage “Deep Dive Into Steve Aoki’s Experience"',
         [3]: "Direction Artistique",
         [4]: "Live Production",
         [5]: "Brief des équipes de tournage",
