@@ -5,20 +5,13 @@
         <router-link to="/">
           <img src="../assets/margin-top: $global_margin/GPT_Blanc.png" alt="Logo GreatProductionTeam">
         </router-link>
-        <p>© Copyright GreatProductionTeam 2022</p>
       </div>
 
       <div>
         <p>contact@greatprod.fr</p>
-        <a href="" target="_blank">
-           <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="" target="_blank">
+        <a href="https://www.linkedin.com/company/great-production-team/" target="_blank">
            <i class="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="" target="_blank">
-           <i class="fa-brands fa-instagram"></i>
-        </a>  
       </div>
     </div>
   </footer>

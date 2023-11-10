@@ -116,9 +116,13 @@
       </div>
     </nav>
 
-    <section class="header container">
+    <section class="header container" v-if="this.project.logo">
       <img :src="getImgUrl(this.project.header)" :alt="this.project.name">
       <img :src="getImgUrl(this.project.logo)" :alt="this.project.name">
+    </section>
+
+    <section class="header container" v-else>
+      <img :src="getImgUrl(this.project.header)" :alt="this.project.name" class="single">
     </section>
 
     <div class="container content">
@@ -135,7 +139,7 @@
             allowfullscreen
         ></iframe>
 
-        <div class="main_project">
+        <div class="main_project" v-if="this.project.approach">
           <div>
             <h3>Notre approche</h3>
           </div>
@@ -202,6 +206,31 @@ export default {
       this.zenEmission();
       document.title = "Zen | GreatProd.fr"
 
+    } else if(url === "zenauzenith"){
+
+      this.zenAuZenith();
+      document.title = "Zen au Zénith | GreatProd.fr"
+
+    } else if(url === "lesprolongs"){
+
+      this.lesProlongs();
+      document.title = "Les Prolong’ | GreatProd.fr"
+
+    } else if(url === "lesgourmands"){
+
+      this.lesGourmands();
+      document.title = "Les Gourmands | GreatProd.fr"
+
+    } else if(url === "superfans"){
+
+      this.superFans();
+      document.title = "Superfans | GreatProd.fr"
+
+    } else if(url === "flopsinger"){
+
+      this.flopSinger();
+      document.title = "Flop Singer | GreatProd.fr"
+
     } else if(url === "magesport"){
 
       this.magEsport();
@@ -230,58 +259,189 @@ export default {
 
       this.project = {
         name: "Zen",
-        header: "zen/zen_background_2.jpg",
-        logo: "zen/zen_logo.png",
-        description: "Zen est une émission en rupture avec les talkshows traditionnels de Twitch. Porté par le duo Maxime Biaggi & Grimkujow, ce show bimensuel au ton décalé et humoristique plonge ses invités dans des happenings complètement fous. Chorégraphie de KPOP, scène de catch avec des professionnels, stream en limousine, séquence dans l’espace, reconstitution d’une garde à vue, Zen repousse les limites du divertissement sur Twitch. En 8 mois d’existence sur la chaîne d’un talent naissant, Zen réunit 4000 spectateurs en moyenne par émission et cumule près d’un demi-million de vues sur Twitch.",
+        header: "projet/zen/flop_city.jpg",
+        logo: "projet/zen/logo.png",
+        description: "L’émission numéro 1 sur Twitch et Youtube présentée par Maxime Biaggi et Grimkujow un lundi sur deux à 20h00. À chaque show son invité qui vient se prêter au jeu d'une interview rythmée par les happenings et les sketchs. Improvisation, humour absurde, mises en scènes théâtrales, Zen est un late show divertissant où vous (re)découvrez des personnalités d'internet, de l'humour, du cinéma et de la musique sous un angle inédit. L’émission réunit chaque semaine plus de 300 000 spectateurs en direct et génère plus d’un million de vues en replay et des millions d’impressions sur les réseaux sociaux.",
         embed_video: {
-          url: "https://www.youtube.com/embed/lfNR0IAExaA",
+          url: "https://www.youtube.com/embed/OqAKDVlB-3k?si=KvL2_xCOY5BJfFuQ",
         },
-        approach: "Avec Zen, nous voulions créer un show complètement inédit sur Twitch. Si la plateforme regorge déjà d’émissions, de talkshows et de podcasts de qualité, nous voulions apporter un grain de folie, d’imprévisible et de burlesque, un terrain sur lequel peu ont osé s’aventurer en direct. Un pari réussi avec une première saison à 13 épisodes qui a trouvé son public et accueilli des invités du calibre de Billy, Mehdi Maïzi, Joyca, Freddy Gladieux, Cortex et bien d’autres.",    
+        approach: "Avec Zen, nous voulions créer un show complètement inédit sur Twitch. Si la plateforme regorge déjà d’émissions, de talkshows et de podcasts de qualité, nous voulions apporter un grain de folie, d’humour et de comédie, un terrain sur lequel peu ont osé s’aventurer en direct. Un pari réussi avec trois saisons qui ont réunit des millions de téléspectateurs et accueilli des invités du calibre de Kev Adams, Squeezie, Mister V, Léna Situations, Bigflo ou encore Fabrice Éboué.",    
       }
 
-      this.socials = {
-        [0]: {
+      this.socials = [
+        {
           name: "twitch",
           url: "https://www.twitch.tv/maximebiaggi",
         },
-        [1]: {
+        {
           name: "youtube",
           url: "https://www.youtube.com/c/Zen%C3%A9mission/featured",
         },
-        [2]: {
+        {
           name: "twitter",
           url: "https://twitter.com/ZenEmission",
         },
-        [3]: {
-          name: "tiktok",
-          url: "#",
-        },
-      }
+      ]
 
       this.expertise = null
 
-      this.pictures = {
-        [0]: "zen/FZ1A0299.jpg",
-        [1]: "zen/FZ1A8851.jpg",
-        [2]: "zen/FZ1A7563.jpg",
-        [3]: "zen/FZ1A7548.jpg",
-        [4]: "zen/FZ1A6708.jpg",
-        [5]: "zen/FZ1A6009.jpg",
-        [6]: "zen/FZ1A3196.jpg",
-        [7]: "zen/FZ1A2197.jpg",
-        [8]: "zen/FZ1A1810.jpg",
-        [9]: "zen/FZ1A9307.jpg",
-        [10]: "zen/12.jpg",
-        [11]: "zen/02.jpg",
+      this.pictures = [
+        "projet/zen/©CorentinBoutrige_ZenKevAdams_181.jpg",
+        "projet/zen/©CorentinBoutrige_ZenMisterV_023.jpg",
+        "projet/zen/Clement_CELLIER_@Cloumzy-ZenEmission_11-71.jpg",
+        "projet/zen/A7409312.jpg",
+
+        "projet/zen/A7401448.jpg",
+        "projet/zen/Clement_CELLIER_@Cloumzy-ZenS3E01-11.jpg",
+        "projet/zen/Clement_CELLIER_@Cloumzy-ZenS3E02-61.jpg",
+        "projet/zen/Clement_CELLIER_@Cloumzy-ZenS3E02-96.jpg",
+        "projet/zen/Clement_CELLIER_@Cloumzy-ZenS3E03-167.jpg",
+      ]
+    },
+
+    async zenAuZenith(){
+
+      this.project = {
+        name: "Zen au Zénith",
+        header: "projet/zen_au_zenith/fond_nologo.jpg",
+        logo: "projet/zen_au_zenith/logo.png",
+        description: "Pour clôturer la 2ème saison de Zen,nous avons ont vu les choses en grand en réalisant l’épisode final en direct du Zénith de Paris. Squeezie était l’invité de cette émission très spéciale devant plus de 5 700 personnes sur place et plus d’un million en ligne. Sold out en moins de 30 secondes, le show a été marqué par la présence de nombreux guests tels que Bigflo et Oli, Seb La Frite, Djilsi, Théodort, Ziak, Winnterzuko ou encore Keen’V ! Un spectacle écrit, mis en scène et produit par Great Production Team.",
+        embed_video: {
+          url: "https://www.youtube.com/embed/6_9uMfInpTg?si=pCxq3Dbu5KzsacBH",
+        },
+        approach: "Avec Zen Au Zénith, nous souhaitions casser la barrière du divertissement sur internet et proposer un véritable spectacle écrit et mis en scène qui mêle interview, représentation théâtrale et prestations musicales. Un succès salué notamment par France Inter, Libération, Le Figaro, Clique, Society et BFM TV.",    
       }
+
+      this.socials = []
+
+      this.expertise = null
+
+      this.pictures = [
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-1.jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-12.jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-14.jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-31.jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-49.jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-67-(1).jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-73-(1).jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-186.jpg",
+        "projet/zen_au_zenith/Clement_CELLIER_@Cloumzy-ZenAuZenith-220.jpg",
+      ]
+    },
+
+    async lesGourmands(){
+
+      this.project = {
+        name: "Les Gourmands",
+        header: "projet/les_gourmands/key_visuel.jpg",
+        logo: "",
+        description: "Maxime Biaggi réunit une belle tablée d’amis créateurs de contenu pour son repas de fêtes chic et choc dans un cadre chaleureux et feutré. Un stream de fin d’année plein de réconfort et d’esprit de Noël qui comporte, réunion de famille oblige, son petit lot de rebondissements. La première édition a eu lieu à l’hôtel Mariott des Champs Élysées et a été vue plus d’un million de fois.",
+        embed_video: {
+          url: "https://www.youtube.com/embed/HDtC6jtO160?si=bysFQ5kaNVOpjX8Z",
+        },
+        approach: "",    
+      }
+
+      this.socials = []
+
+      this.expertise = null
+
+      this.pictures = [
+        "projet/les_gourmands/13.jpg",
+        "projet/les_gourmands/14.jpg",
+      ]
+    },
+
+    async flopSinger(){
+
+      this.project = {
+        name: "Flopsinger",
+        header: "projet/flop_singer/fond_logo.jpg",
+        // logo: "projet/flop_singer/logo.png",
+        description: "Dans Flopsinger, huit personnalités costumées et masquées livrent une performance sur une chanson de leur choix. Le jury et les spectateurs devineront-ils qui se cache sous le masque ? Pour sa première édition, le prime événementiel de Grimkujow a rassemblé plus de 50 000 spectateurs en pic, une performance exceptionnelle qui a prouvé la force du concept et l’attrait autour de la première grosse production de Grim.",
+        embed_video: {
+          url: "https://www.youtube.com/embed/CcB1qYWUr18?si=gm0CFhuIsXZ2iXMR",
+        },
+        approach: "",    
+      }
+
+      this.socials = []
+
+      this.expertise = null
+
+      this.pictures = [
+        "projet/flop_singer/A7404470.jpg",
+        "projet/flop_singer/A7404701.jpg",
+        "projet/flop_singer/A7404893.jpg",
+        "projet/flop_singer/A7404986.jpg",
+        "projet/flop_singer/A7405182.jpg",
+        "projet/flop_singer/A7405199.jpg",
+      ]
+    },
+
+    async superFans(){
+
+      this.project = {
+        name: "Superfans",
+        header: "projet/superfans/superfans1.jpg",
+        logo: "",
+        description: "Un nouveau courant est en train de naître chez les supporters esport. D’abord afficionados, puis fans, les supporters se rassemblent aujourd’hui en groupes d’ultras. Notre mini-série documentaire pour Riot Games a suivi les groupes de supporters de Team Vitality et Karmine Corp qui ont fait le déplacement jusqu’à Berlin pour la première édition des VCT, le championnat européen de Valorant. La série est disponible sur la chaîne YouTube officielle de l’éditeur du jeu.",
+        embed_video: {
+          url: "https://www.youtube.com/embed/RrU2cc8Ts_8?si=2JdJ7HBISuZYeCfH",
+        },
+        approach: "",    
+      }
+
+      this.socials = []
+
+      this.expertise = [
+        "Écriture des reportages",
+        "Organisation des tournages",
+        "Tournage",
+        "Montage",
+        "Direction artistique",
+        "Motion Design",
+        "Sous-titrage",
+      ]
+
+      this.pictures = [
+      ]
+    },
+
+    async lesProlongs(){
+
+      this.project = {
+        name: "Les Prolong'",
+        header: "projet/prolongs/black.png",
+        logo: "",
+        description: "Amazon et Prime Vidéo nous on fait confiance pour bâtir leur première émission de football sur Twitch exploitant les droits de la Ligue 1 Uber Eats. Zack Nani, JoelPostbad et Yassencore sont réunis pour exposer leurs avis tranchés et pas toujours très objectifs sur le championnat de France ! Le trio iconique est rejoint par Natacha Basdevant, journaliste sportive, pour former l'équipe type de cette émission en partie inspirée par la mise en scène théâtrale du show espagnol de référence El Chiringuito de Jugones.",
+        embed_video: {
+          url: "https://www.youtube.com/embed/YsmQEw99G6s?si=K6l9ytduHNxTQ3_P",
+        },
+        approach: "",    
+      }
+
+      this.socials = []
+
+      this.expertise = [
+        "Conceptualisation de l’émission en adéquation avec la stratégie de Prime Vidéo",
+        "Élaboration du casting",
+        "Écriture de l’émission",
+        "Mise en scène",
+        "Live Production",
+        "Brief des équipes de tournage"
+      ]
+
+      this.pictures = [
+      ]
     },
 
     async magEsport(){
 
       this.project = {
         name: "Le MAG Esport",
-        header: "mag_esport/MagEsport.png",
-        logo: "mag_esport/LOGO_MAGESPORT_00000.png",
+        header: "projet/mag_esport/MagEsport.png",
+        logo: "projet/mag_esport/LOGO_MAGESPORT_00000.png",
         description: "Le rendez-vous 100% esport du vendredi soir en access prime-time sur MGG TV, la première chaîne télévisée entièrement consacrée à l’esport avec 1,1 million de téléspectateurs mensuels. Présenté par Thibault Braccio, Stéphane Cochara et JoelPostbad avec les chroniqueurs MGG, le MAG Esport revient sur toute l’actualité et les résultats de la semaine sur League of Legends, Counter-Strike, Valorant, Fortnite et les autres jeux de référence avec des interviews des meilleurs joueurs mondiaux. Disponible sur Canal+, Amazon Prime, Orange, Bouygues, Free, SFR et Molotov.",
         embed_video: {
           url: "https://www.youtube.com/embed/Q7NTmvppPBU",
@@ -289,44 +449,29 @@ export default {
         approach: "En plus d’être un rendez-vous apprécié par les fans d’esport, le MAG Esport, avec ses discussions très mouvementées et son large spectre éditorial, est aussi un divertissement pouvant toucher une large audience qui ne connait pas nécessairement la discipline. Ce magazine hebdomadaire de 52 minutes reprend les codes des émissions de sport de référence à la télévision et la radio en les adaptant à la culture internet.",    
       }
 
-      this.socials = {
-        // [0]: {
-        //   name: "twitch",
-        //   url: "",
-        // },
-        // [1]: {
-        //   name: "youtube",
-        //   url: "",
-        // },
-        // [2]: {
-        //   name: "twitter",
-        //   url: "",
-        // },
-      }
+      this.expertise = [
+        "Présentation et chroniques",
+        "Booking des chroniqueurs et invités",
+        "Création du conducteur",
+        "Production des assets vidéo",
+        "Brief des équipes de tournage",
+        "Supervision de la post–production",
+        "Relais sociaux",
+      ]
 
-      this.expertise = {
-        [0]: "Présentation et chroniques",
-        [1]: "Booking des chroniqueurs et invités",
-        [2]: "Création du conducteur",
-        [3]: "Production des assets vidéo",
-        [4]: "Brief des équipes de tournage",
-        [5]: "Supervision de la post–production",
-        [6]: "Relais sociaux",
-      }
-
-      this.pictures = {
-        [0]: "mag_esport/P1044800.jpg",
-        [1]: "mag_esport/P1044899.jpg",
-        [2]: "mag_esport/IMG_3738.jpg",
-      }
+      this.pictures = [
+        "projet/mag_esport/P1044800.jpg",
+        "projet/mag_esport/P1044899.jpg",
+        "projet/mag_esport/IMG_3738.jpg",
+      ]
     },
 
     async sandboxLivestream(){
 
       this.project = {
         name: "The Sandbox Livestream",
-        header: "sandboxlivestream/bg_sandbox.jpg",
-        logo: "sandboxlivestream/sandbox-logo-colour.png",
+        header: "projet/sandboxlivestream/bg_sandbox.jpg",
+        logo: "projet/sandboxlivestream/sandbox-logo-colour.png",
         description: "Réalisation du pilote The Sandbox Livestream commandé par Webedia. Une émission autour de l’actualité du jeu, du metaverse et des NFT présentée en anglais par Laure Valée et Brandon Smith. Diffusion en direct sur les chaînes Twitch, YouTube et le compte Facebook de The Sandbox.",
         embed_video: {
           url: "https://www.youtube.com/embed/8canppirUiY",
@@ -334,35 +479,20 @@ export default {
         approach: "The Sandbox souhaitait faire découvrir le Web 3 et le métaverse à une nouvelle audience tout en proposant un show rafraichissant à sa communauté internationale. Remy Bompar, Operations Manager chez The Sandbox et Pandapops étaient en studio pour parler des dernières news du métaverse, de l’évènement NFT NYC qui s’était tenu quelques jours auparavant à Manhattan et de la saison 3 du jeu.",    
       }
 
-      this.socials = {
-        // [0]: {
-        //   name: "twitch",
-        //   url: "",
-        // },
-        // [1]: {
-        //   name: "youtube",
-        //   url: "",
-        // },
-        // [2]: {
-        //   name: "twitter",
-        //   url: "",
-        // },
-      }
+      this.expertise = [
+        "Écriture de l’émission",
+        "Création du conducteur en collaboration avec les équipes de The Sandbox",
+        'Écriture et réalisation du reportage “Deep Dive Into Steve Aoki’s Experience"',
+        "Direction Artistique",
+        "Live Production",
+        "Brief des équipes de tournage",
+      ]
 
-      this.expertise = {
-        [0]: "Écriture de l’émission",
-        [1]: "Création du conducteur en collaboration avec les équipes de The Sandbox",
-        [2]: 'Écriture et réalisation du reportage “Deep Dive Into Steve Aoki’s Experience"',
-        [3]: "Direction Artistique",
-        [4]: "Live Production",
-        [5]: "Brief des équipes de tournage",
-      }
-
-      this.pictures = {
-        [0]: "sandboxlivestream/FXtdQysUUAMus8B.jpg",
-        [1]: "sandboxlivestream/SANDBOX_SCREEN_2.png",
-        [2]: "sandboxlivestream/Screenshot_5.png",
-      }
+      this.pictures = [
+        "projet/sandboxlivestream/FXtdQysUUAMus8B.jpg",
+        "projet/sandboxlivestream/SANDBOX_SCREEN_2.png",
+        "projet/sandboxlivestream/Screenshot_5.png",
+      ]
     },
 
     getImgUrl(pic) {

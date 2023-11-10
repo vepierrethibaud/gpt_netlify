@@ -1,9 +1,9 @@
 <template>
   <div id="home">
     <transition name="fade">
-      <nav :class="{ 'scroll': !view.topOfPage}">
+      <nav :class="{ 'scroll': !view.topOfPage}" v-if="this.projects">
         <div class="container">
-          <a href="" target="_blank" class="socials">
+          <a href="https://www.linkedin.com/company/great-production-team/" target="_blank" class="socials">
             <i class="fa-brands fa-linkedin"></i>
             <p>/greatprodfr</p>
           </a>
@@ -120,7 +120,8 @@
       <section class="project container">
         <router-link :to="'/projet/'+this.main_project.url" class="socials project_nav">
           <img :src="getImgUrl(this.main_project.picture)" :alt="this.main_project.name">
-          <img :src="getImgUrl(this.main_project.logo)" :alt="this.main_project.name">
+          <!-- <img :src="getImgUrl(this.main_project.logo)" :alt="this.main_project.name"> -->
+          <img :alt="this.main_project.name">
         </router-link>
 
         <div class="main_project">
@@ -256,62 +257,106 @@ export default {
       }
 
       this.main_project = {
-        name: "Zen Emission",
+        name: "Zen",
         url: "zenemission",
-        logo: "zen/zen_logo.png",
-        description: "Zen est une émission en rupture avec les talkshows traditionnels de Twitch. Porté par le duo Maxime Biaggi & Grimkujow, ce show bimensuel au ton décalé et humoristique plonge ses invités dans des happenings complètement fous.",
-        picture: "zen/zen_background_2.jpg",
+        logo: "projet/zen/zen_lateshow.png",
+        description: "Le late show ultra-populaire présenté par Maxime Biaggi et Grimkujow. À chaque émission son invité qui vient se prêter au jeu d'une interview rythmée par les happenings et les sketchs. Improvisation, humour absurde, mises en scènes théâtrales ont fait de Zen l’émission n°1 sur Twitch et YouTube.",
+        picture: "projet/zen/zen.jpg",
       }
       
-      this.projects = {
-        [0]: {
+      this.projects = [
+        {
+          name: "Zen au Zenith",
+          url: "zenauzenith",
+          picture: "projet/zen_au_zenith/fond.jpg",
+        },
+        {
+          name: "Les Gourmands",
+          url: "lesgourmands",
+          picture: "projet/les_gourmands/key_visuel.jpg",
+        },
+        {
+          name: "Flopsinger",
+          url: "flopsinger",
+          picture: "projet/flop_singer/fond_logo.jpg",
+        },
+        {
+          name: "Les Prolongs’",
+          url: "lesprolongs",
+          picture: "projet/prolongs/blue.png",
+        },
+        {
+          name: "Superfans",
+          url: "superfans",
+          picture: "projet/superfans/superfans2.jpg",
+        },
+        {
           name: "Mag Esport",
           url: "magesport",
-          picture: "mag_esport/le-mag-e-sport.jpeg",
+          picture: "projet/mag_esport/le-mag-e-sport.jpeg",
         },
-        [1]: {
+        {
           name: "The Sandbox Livestream",
           url: "thesandboxlivestream",
-          picture: "sandboxlivestream/Screenshot_5.png",
+          picture: "projet/sandboxlivestream/Screenshot_5.png",
         },
-      }
+      ]
 
-      this.skills = {
-        [0]: "Création de formats originaux internet et télévision",
-        [1]: "Conseil éditorial",
-        [2]: "Production Live",
-        [3]: "Réalisation de reportages et documentaires",
-        [4]: "Couverture d’évènements esport et gaming",
-        [5]: "Accompagnement de vos initiatives Twitch, YouTube et réseaux sociaux",
-      }
+      this.skills = [
+        "Création de formats originaux internet et télévision",
+        "Conseil éditorial",
+        "Production Live",
+        "Réalisation de reportages et documentaires",
+        "Accompagnement de vos initiatives et vos campagnes Twitch, YouTube et réseaux sociaux",
+      ]
 
       this.team = {
         picture: "team.jpg",
-        description: "La Great Prod vous accompagne dans vos projets de création de contenu digital et télévisuel. Passés par MTV, Game One, BeIN Sports, RMC, PlayStation North America et le groupe Webedia les membres de notre équipe allient une solide expérience de production dans les grands groupes télé à une réelle expertise dans la création de contenu sur internet. Émissions et reportages à destination de Twitch, YouTube ou de la télévision, formats courts pensés pour Tik Tok et les autres réseaux, nous répondons à vos besoins avec des créations originales adaptées à toutes les plateformes.",
+        description: "Great Production Team accompagne les créateurs de contenu, les annonceurs et les marques médias dans leurs programmes ou leurs campagnes à destination des nouvelles plateformes de diffusion et des réseaux sociaux. Portée par Maxime Biaggi, Great Prod bouscule les codes de la production audiovisuelle avec des concepts frais et innovants plébiscités par les 15-34 ans. Passés par MTV, Game One, BeIN Sports, RMC, PlayStation North America et le groupe Webedia les membres de notre équipe allient une solide expérience de production dans les grands groupes télés à une réelle expertise dans la création de contenu sur internet. Nous répondons à vos besoins avec des créations originales adaptées à toutes les plateformes.",
       }
 
-      this.partners = {
-        [0]: {
-          name: "Webedia",
-          picture: "partners/webedia.png",
+      this.partners = [
+        {
+          name: "Prime Video",
+          picture: "partenaires/prime_video.png",
         },
-        [1]: {
-          name: "CNIEL",
-          picture: "partners/cniel.jpg",
+        {
+          name: "BBC Studios",
+          picture: "partenaires/bbc.png",
         },
-        [2]: {
-          name: "SandBox",
-          picture: "partners/sandbox.png",
+        {
+          name: "Disney +",
+          picture: "partenaires/disney.png",
         },
-        [3]: {
-          name: "Happn",
-          picture: "partners/happn.png",
+        {
+          name: "Burger King",
+          picture: "partenaires/burger_king.png",
         },
-        // [4]: {
-        //   name: "Webedia",
-        //   picture: "partners/webedia.png",
-        // },
-      }
+        {
+          name: "Adidas",
+          picture: "partenaires/adidas.png",
+        },
+        {
+          name: "Riot Games",
+          picture: "partenaires/riotgames.png",
+        },
+        {
+          name: "Pringles",
+          picture: "partenaires/pringles.png",
+        },
+        {
+          name: "Free",
+          picture: "partenaires/free.png",
+        },
+        {
+          name: "Subway",
+          picture: "partenaires/subway.png",
+        },
+        {
+          name: "Puma",
+          picture: "partenaires/puma.png",
+        }
+      ]
     },
 
     getImgUrl(pic) {
